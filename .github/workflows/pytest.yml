@@ -29,7 +29,8 @@ jobs:
       - name: Run tests with pytest
         run: |
           echo "Current directory is: $(pwd)"
-          ls -la  # Lista os arquivos para depuração
+          export PYTHONPATH=$(pwd):$PYTHONPATH
+          echo "PYTHONPATH is set to: $PYTHONPATH"
           pytest --rootdir=. --junitxml=report.xml -W ignore::DeprecationWarning
 
       - name: Upload test results
