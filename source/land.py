@@ -3,7 +3,7 @@ class Land:
         self.width = width
         self.height = height
 
-    def inside_limits(self, x: int, y: int):
+    def inside_limits(self, x: int, y: int) -> bool:
         return 0 <= x <= self.width and 0 <= y <=  self.height
 
     def __str__(self):

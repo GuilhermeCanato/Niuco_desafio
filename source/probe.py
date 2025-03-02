@@ -1,4 +1,4 @@
-from land import Land
+from source.land import Land
 
 # Constante com as 4 direções possiveis
 DIRECTIONS = ["N", "E", "S", "W"]
@@ -31,8 +31,11 @@ class Probe:
         new_x = self.x + dx
         new_y = self.y + dy
 
-        self.x = new_x
-        self.y = new_y
+        if self.land.inside_limits(new_x, new_y):
+            self.x = new_x
+            self.y = new_y
+        else:
+            print("ERROR: A sonda está fora do planalto, ignorando comando!")
 
     def execute_comands(self, comands: str):
         for comand in comands:
