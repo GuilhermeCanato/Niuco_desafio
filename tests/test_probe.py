@@ -9,7 +9,7 @@ def land():
 
 @pytest.fixture
 def probe(land):
-    return Probe(1, 3, "N", land)
+    return Probe(1, 3, "N", "LMLMLMLMM", land)
 
 # Testando se ele faz a construção do objeto corretamente
 def test_probe_constructor(probe):

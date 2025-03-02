@@ -19,3 +19,12 @@ class ProbeController:
     def show_probes_position(self):
         for probe in self.probes:
             print(probe)
+    
+    def show_probes_values(self):
+        probes_values = []
+
+        for probe in self.probes:
+            probe_value = (probe.x, probe.y, probe.direction, probe.commands)
+            probes_values.append(probe_value)
+
+        return probes_values
