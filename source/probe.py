@@ -16,7 +16,7 @@ class Probe:
     def __init__(self, x: int, y: int, direction: str, commands: str, land: Land):
 
         # Verifica antes de inicializar se a posição inicial ja está ocupada ou esta fora dos limites
-        if not land.inside_limits(x, y) and not land.check_position(x, y):
+        if not land.inside_limits(x, y) or not land.check_position(x, y):
             raise ValueError(f"Error: Posição inicial inválida, por que ja está ocupada por outra sonda ou está fora dos limites do planalto/terreno")
 
         self.x = x

@@ -45,12 +45,3 @@ def data_entry(data: EntryData):
         }
     except Exception as e:
         raise HTTPException(status_code = 400, detail = f"Error: {e}")
-
-
-# 
-# probe_controller.add_probe(3, 3, "E", "MMRMMRMRRM")
-
-# # probe_controller.show_probes_position()
-# # probe_controller.execute_probes()
-# # probe_controller.show_probes_position()
-# print(probe_controller.show_probes_values())

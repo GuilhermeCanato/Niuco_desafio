@@ -61,3 +61,16 @@ def test_probe_move(probe):
     probe.move()
     probe.move()
     assert probe.x == 4
+
+# Testando se o movimento para fora dos limites é ignorado
+def test_probe_move(probe):
+    # probe = 1, 3, "N"
+    probe.move()
+    assert probe.y == 4
+
+    probe.move()
+    assert probe.y == 5
+
+    # deve continuar no 5
+    probe.move()
+    assert probe.y == 5
