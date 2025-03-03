@@ -12,6 +12,7 @@ def land():
 def probe_controller(land):
     return ProbeController(land)
 
+# Teste para verificar se o processo todo está funcionando como o esperado
 def test_all_process(probe_controller):
 
     probe_controller.add_probe(1, 2, "N", "LMLMLMLMM")

@@ -12,6 +12,7 @@ def land():
 def probe_controller(land):
     return ProbeController(land)
 
+# Testa o funcionamento da classe ProbeController
 def test_pobre_controller(probe_controller):
     probe_controller.add_probe(2, 4, "E", "RRRMMLM")
     probe_controller.add_probe(1, 2, "N", "LMLMLMLMM")
