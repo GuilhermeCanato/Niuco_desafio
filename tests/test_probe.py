@@ -74,3 +74,15 @@ def test_probe_move(probe):
     # deve continuar no 5
     probe.move()
     assert probe.y == 5
+
+# Testando se a sonda respeita o limite ao girar e tentar mover
+def test_probe_rotate_and_move_outside(land):
+    probe = Probe(5, 5, "E", "MMM", land)
+    probe.move()
+    assert probe.x == 5
+
+# Testando se ao criar uma sonda em uma posição ocupada, levanta uma exceção
+def test_probe_raises_exception_if_position_occupied(land):
+    land.add_position(2, 2)  # Simulando que já existe uma sonda na posição
+    with pytest.raises(ValueError):
+        Probe(2, 2, "N", "M", land)

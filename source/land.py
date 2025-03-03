@@ -9,7 +9,7 @@ class Land:
     def inside_limits(self, x: int, y: int) -> bool:
         return 0 <= x <= self.width and 0 <= y <=  self.height
     
-    # Função para verificar se já existe uma sonda nessa posição
+    # Função para verificar se esta posição está livre
     def check_position(self, x: int, y: int) -> bool:
         return (x, y) not in self.probe_positions
 
