@@ -38,9 +38,13 @@ Este repositório contém a implementação do desafio "Explorando Marte", propo
 
 3. Execute a aplicação:
    ```sh
-   python main.py
+   fastapi dev main.py
    ```
-
+4. Acesse o link disponibilizado no terminal
+    ```sh
+   http://127.0.0.1:8000/docs
+   ```
+   
 ## Como Funciona
 
 O sistema recebe os seguintes dados de entrada:
@@ -99,6 +103,10 @@ Para debugar o código no VSCode:
 ## CI/CD
 
 Um pipeline foi configurado via GitHub Actions para rodar os testes automaticamente em cada push. 
+
+## Link da playlist do youtube com a gravação do desenvolvimento do projeto
+
+https://www.youtube.com/playlist?list=PLVmDe8Y2NmfDHhPB-bkLLB1HpA9dg6-vp
 
 ## Autor
 
