@@ -36,9 +36,12 @@ def data_entry(data: EntryData):
 
         probe_controller.execute_probes()
 
-        return {
-            "sondas": [probe.model_dump() in probe_controller.show_probes_values()]
-            
+        return {           
+            "sondas": [{
+                "x": x,
+                "y": y,
+                "Direção": direction
+                } for (x, y, direction, _) in probe_controller.show_probes_values()]
         }
     except Exception as e:
         raise HTTPException(status_code = 400, detail = f"Error: {e}")
