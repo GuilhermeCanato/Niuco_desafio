@@ -46,17 +46,30 @@ Este repositório contém a implementação do desafio "Explorando Marte", propo
    ```
    
 ## Como Funciona
+A entrada dos dados é feito através de uma API, por motivos de eficiência na comunicação do usuário ao sistema, além de abrir portas para integrações e automações com mais facilidade.
 
 O sistema recebe os seguintes dados de entrada:
 
 ```json
 {
-  "altura_planalto": 5,
-  "largura_planalto": 5,
-  "sondas": [
-    { "x": 1, "y": 2, "direcao": "N", "comandos": "LMLMLMLMM" },
-    { "x": 3, "y": 3, "direcao": "E", "comandos": "MMRMMRMRRM" }
-  ]
+    "land": {
+        "height": 5,
+        "width": 5
+    },
+    "probes": [
+        {
+            "x": 1,
+            "y": 2,
+            "direction": "N",
+            "command": "LMLMLMLMM"
+        },
+        {
+            "x": 3,
+            "y": 3,
+            "direction": "E",
+            "command": "MMRMMRMRRM"
+        }
+    ]
 }
 ```
 
@@ -88,25 +101,31 @@ Os testes unitários cobrem:
 - Colisões entre sondas
 - Casos de erro e exceções
 
-Para rodar os testes:
+Para rodar todos os testes:
 ```sh
 pytest
 ```
 
+Para rodar um arquivo específico de teste:
+```sh
+pytest tests/test_land.py
+```
+
 ## Debugging
 
-Para debugar o código no VSCode:
-1. Defina breakpoints no código.
-2. Configure o `launch.json` para Python.
-3. Rode o debugger passo a passo.
+Foi utilizado, para esse projeto, o debugging python padrão do VsCode. Breakpoints para melhor análise e entendimento nos casos de erros.
 
 ## CI/CD
 
-Um pipeline foi configurado via GitHub Actions para rodar os testes automaticamente em cada push. 
+Um pipeline foi configurado via GitHub Actions para rodar os testes automaticamente em cada push. Para acessar os logs, acesse a aba actions do repositório, clique no teste desejado e nos logs, na aba 'Upload test results' vai ter o link para download do arquivo report.xml contendo os logs do pytest
 
-## Link da playlist do youtube com a gravação do desenvolvimento do projeto
+## Link da playlist da gravação do desenvolvimento do projeto
 
 https://www.youtube.com/playlist?list=PLVmDe8Y2NmfDHhPB-bkLLB1HpA9dg6-vp
+
+## Link do projeto rodando como web service na plataforma Railway
+
+https://niucodesafio-production.up.railway.app/docs
 
 ## Autor
 
